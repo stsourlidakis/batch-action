@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/stsourlidakis/batch-action/issues"
   },
-  "homepage": "https://github.com/stsourlidakis/batch-action#readme"
+  "homepage": "https://github.com/stsourlidakis/batch-action#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1"
+  }
 }
