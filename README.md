@@ -1,4 +1,4 @@
-# batch-action
+# batch-action [![codecov](https://codecov.io/gh/stsourlidakis/batch-action/branch/master/graph/badge.svg)](https://codecov.io/gh/stsourlidakis/batch-action)
 
 Batch items and execute an action when a batch reaches the specified size
 
