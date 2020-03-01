@@ -1,7 +1,7 @@
 {
 	"name": "batch-action",
 	"version": "0.0.1",
-	"description": "",
+	"description": "Batch items and execute an action when a batch reaches the specified size",
 	"main": "Batch.js",
 	"scripts": {
 		"test": "jest ."
