@@ -61,13 +61,15 @@ test('Empties the batch when the clear method is called', () => {
 	expect(batch.getSize()).toBe(0);
 });
 
-test('Throws an error if the size option is missing or not an integer', () => {
+test('Throws an error if the size option is missing or not a positive integer', () => {
+	const sizeError = /^Option "size" is not a positive integer$/;
+
 	expect(
 		() =>
 			new Batch({
 				action: mockCallback,
 			})
-	).toThrowError(/^Option "size" is not an integer$/);
+	).toThrowError(sizeError);
 
 	expect(
 		() =>
@@ -75,7 +77,31 @@ test('Throws an error if the size option is missing or not an integer', () => {
 				size: 'foo',
 				action: mockCallback,
 			})
-	).toThrowError(/^Option "size" is not an integer$/);
+	).toThrowError(sizeError);
+
+	expect(
+		() =>
+			new Batch({
+				size: -5,
+				action: mockCallback,
+			})
+	).toThrowError(sizeError);
+
+	expect(
+		() =>
+			new Batch({
+				size: Infinity,
+				action: mockCallback,
+			})
+	).toThrowError(sizeError);
+
+	expect(
+		() =>
+			new Batch({
+				size: NaN,
+				action: mockCallback,
+			})
+	).toThrowError(sizeError);
 });
 
 test('Throws an error if the action property is missing or not a function', () => {

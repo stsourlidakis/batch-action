@@ -14,8 +14,8 @@ class Batch {
 		this.maxSize = Number.parseInt(options.size);
 		this.action = options.action;
 
-		if (Number.isNaN(this.maxSize)) {
-			throw new Error('Option "size" is not an integer');
+		if (Number.isNaN(this.maxSize) || this.maxSize < 1) {
+			throw new Error('Option "size" is not a positive integer');
 		}
 	}
 
