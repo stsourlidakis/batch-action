@@ -6,6 +6,10 @@
 	"scripts": {
 		"test": "jest ."
 	},
+	"jest": {
+		"coverageDirectory": "./coverage/",
+		"collectCoverage": true
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/stsourlidakis/batch-action.git"
