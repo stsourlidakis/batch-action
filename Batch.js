@@ -10,7 +10,7 @@ class Batch {
 			throw new Error('Option "action" is not a function');
 		}
 
-		this.batch = [];
+		this.items = [];
 		this.maxSize = Number.parseInt(options.size);
 		this.action = options.action;
 
@@ -20,24 +20,24 @@ class Batch {
 	}
 
 	add(item) {
-		this.batch.push(item);
+		this.items.push(item);
 
-		if (this.batch.length >= this.maxSize) {
+		if (this.items.length >= this.maxSize) {
 			this.force();
 		}
 	}
 
 	force() {
-		this.action(this.batch);
+		this.action(this.items);
 		this.clear();
 	}
 
 	clear() {
-		this.batch = [];
+		this.items = [];
 	}
 
 	getSize() {
-		return this.batch.length;
+		return this.items.length;
 	}
 }
 
